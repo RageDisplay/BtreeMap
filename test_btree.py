@@ -1,4 +1,4 @@
-from la3b import BTreeMap
+from btree import BTreeMap
 
 bmap = BTreeMap()
 

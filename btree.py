@@ -1,23 +1,27 @@
-from bintrees import RBTree
+from bintrees import FastBinaryTree
 
 class BTreeMap:
     def __init__(self):
-        self.tree = RBTree()
-
-    def __getitem__(self, key):
-        return self.tree[key]
+        self.tree = FastBinaryTree()
 
     def __setitem__(self, key, value):
         self.tree[key] = value
 
-    def __contains__(self, key):
-        return key in self.tree
+    def __getitem__(self, key):
+        return self.tree[key]
 
     def __delitem__(self, key):
         del self.tree[key]
 
+    def __contains__(self, key):
+        return key in self.tree
+
     def __len__(self):
         return len(self.tree)
+    
+    def __iter__(self):
+        for k, v in self.tree.items():
+            yield k, v
     
     def clear(self):
         self.tree.clear()  #очистка дерева
